@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+
+:root{
+  --google-font: Asap, sans-serif;
+}
+
+*{
+  box-sizing: border-box;
+  margin : 0;
+  padding: 0;
+}
+
+body{
+  background-color: #FFDF6C;
+}
+
+img{
+  max-width:100%;
+  max-height:100%;
+}
+
+.card-style{
+  width: 500px;
+  height: auto;
+  margin: 50px auto;
+  padding-bottom: 20px;
+  box-shadow: 5px 10px 15px 2px rgba(0,0,0,0.23), -5px 10px 15px 2px rgba(0,0,0,0.23);
+  background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-style{
+    width: 300px;
+  }
+  .add-task-button{
+    margin-top: 3px;
+  }
+}
+
+.welcome-image{
+  width: auto;
+  text-align: center;
+}
+
+.input-container{
+  text-align: center;
+}
+
+.task-input{
+  width: 76%; /* 380px */
+  height: 40px;
+  font-family: var(--google-font);
+  font-size: 18px;
+  border: 2px solid black;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+.add-task-button{
+  width: 70px;
+  height: 40px;
+  font-family: var(--google-font);
+  background-color: #007CC7;
+  color: white;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.add-task-button:hover{
+  animation-name: button-on-hover;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes button-on-hover{
+  100%{
+    background-color: #4DA8DA;
+    color: white;
+  }
+}
+
+.task-container{
+  text-align: center;
+  margin: 30px auto;
+  width: 90%;
+}
+
+.task-container > p{
+  font-family: var(--google-font);
+  margin-bottom: 15px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid black;
+}
+
+li{
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  position: relative;
+  list-style: none;
+}
+
+label{
+  font-family: var(--google-font);
+  font-size: 18px;
+  display: inline-block;
+  width: 85%;
+}
+
+input{
+  cursor: pointer;
+}
+
+.completion-check{
+  display: inline-block;
+}
+
+.comleted{
+  margin-bottom: 20px;
+}
+
+.uncomleted{
+  margin-bottom: 40px;
+}
+
+.deletion-button{
+  float: right;
+  height: 25px;
+  width: 25px;
+  background-color: #FF6F70;
+  color: white;
+  border-radius: 3px;
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+}
+
+.deletion-button:hover{
+  animation-name: deletion-btn-hover;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deletion-btn-hover{
+  100%{
+    background-color: #B73225;
+  }
+}
+
+#completedTaskList{
+  text-align: left;
+}
+
+#uncompletedTaskList{
+  text-align: left;
+}
+
+.uncompleted-style{
+  color: black;
+}
+
+.completed-style{
+  color: silver;
+  text-decoration: line-through;
+}
