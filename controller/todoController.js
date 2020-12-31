@@ -58,7 +58,7 @@ module.exports = (app) => {
   });
 
   app.post('/home/:item', (req, res) => {
-    Task.find({item : req.params.item.replace(/\-/g, ' ')}, (err, data) => {
+    Task.find({item : decodeURIComponent(req.params.item)}, (err, data) => {
       if (err) throw err;
       if (data[0]['status'] === 'pending'){
         data[0]['status'] = 'completed';
@@ -73,8 +73,7 @@ module.exports = (app) => {
   });
 
   app.delete('/home/:item', (req, res) => {
-    console.log(req.params.item)
-    Task.deleteOne({item : req.params.item.replace(/\-/g, ' ')}, (err, data) => {
+    Task.deleteOne({item : decodeURIComponent(req.params.item)}, (err, data) => {
       if (err) throw err;
       res.json(data);
     });
